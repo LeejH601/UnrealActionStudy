@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "AttributeSet.h"
-//#include "AbilitySystemComponent.h"
+#include "AbilitySystemComponent.h"
 #include "PlayerAttributeSet.generated.h"
 
 #define ATTRIBUTE_ACCESSORS(ClassName, PropertyName) \
@@ -21,12 +21,12 @@ class UNREALACTIONSTUDY_API UPlayerAttributeSet : public UAttributeSet
 public:
 	UPlayerAttributeSet();
 
-	/*virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& outLifetimeProps) const override;
+	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 	
-	UPROPERTY(BlueprintReadOnly, Category = "Attributes", ReplicatedUsing = OnRep_Health)
+	UPROPERTY(BlueprintReadOnly, Category = "Attributes")
 		FGameplayAttributeData Health;
 	ATTRIBUTE_ACCESSORS(UPlayerAttributeSet, Health);
 
 	UFUNCTION()
-	virtual void OnRep_Health(const FGameplayAttributeData& OldHealth);*/
+	virtual void OnRep_Health(const FGameplayAttributeData& OldHealth);
 };

@@ -9,6 +9,9 @@ AMyPlayerState::AMyPlayerState()
 	m_AbilitySystemComponent = CreateDefaultSubobject<UAbilitySystemComponent>
 		(TEXT("AbilitySystemComponent"));
 	m_AbilitySystemComponent->SetIsReplicated(true);
+	m_AbilitySystemComponent->SetReplicationMode(EGameplayEffectReplicationMode::Minimal);
+
+	
 }
 
 UAbilitySystemComponent* AMyPlayerState::GetAbilitySystemComponent() const

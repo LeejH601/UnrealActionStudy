@@ -5,6 +5,7 @@
 #include "AbilitySystemInterface.h"
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "PlayerAttributeSet.h"
 #include "MyCharacter.generated.h"
 
 UCLASS()
@@ -29,10 +30,25 @@ public:
 
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
 
-	void PossessedBy(AController* newContoroller);
+	virtual void PossessedBy(AController* newContoroller) override;
+	virtual void OnRep_PlayerState() override;
+	virtual void InitializeAttributes();
+	virtual void GiveDefaultAbilities();
 
 public:
-	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = "Abilities")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Abilities")
 		UAbilitySystemComponent* m_AbilitySystemComponent;
 
+	UPROPERTY()
+		UPlayerAttributeSet* m_Attributes;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Attributes")
+		float MaxHealth = 100;
+
+public:
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "Abilities")
+		TSubclassOf<class UGameplayEffect> m_DefaultAttributeEffect;
+
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "Abilities")
+		TArray<TSubclassOf<class UGameplayAbility>> m_DefaultAbilites;
 };
