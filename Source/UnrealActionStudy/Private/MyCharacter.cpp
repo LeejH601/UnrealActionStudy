@@ -2,6 +2,7 @@
 
 
 #include "MyCharacter.h"
+#include "AbilitySystemComponent.h"
 
 // Sets default values
 AMyCharacter::AMyCharacter()
@@ -36,4 +37,17 @@ UAbilitySystemComponent* AMyCharacter::GetAbilitySystemComponent() const
 {
 	return m_AbilitySystemComponent;
 }
+
+void AMyCharacter::PossessedBy(AController* newContoroller)
+{
+	Super::PossessedBy(newContoroller);
+
+	if (m_AbilitySystemComponent)
+	{
+		m_AbilitySystemComponent->InitAbilityActorInfo(this, this);
+	}
+
+
+}
+
 

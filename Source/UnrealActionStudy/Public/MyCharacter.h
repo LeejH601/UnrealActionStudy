@@ -29,6 +29,8 @@ public:
 
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
 
+	void PossessedBy(AController* newContoroller);
+
 public:
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = "Abilities")
 		UAbilitySystemComponent* m_AbilitySystemComponent;

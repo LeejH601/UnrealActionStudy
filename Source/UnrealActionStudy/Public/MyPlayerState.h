@@ -16,6 +16,8 @@ class UNREALACTIONSTUDY_API AMyPlayerState : public APlayerState, public IAbilit
 	GENERATED_BODY()
 	
 public:
+	AMyPlayerState();
+
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
 
 public:

@@ -2,6 +2,14 @@
 
 
 #include "MyPlayerState.h"
+#include "AbilitySystemComponent.h"
+
+AMyPlayerState::AMyPlayerState()
+{
+	m_AbilitySystemComponent = CreateDefaultSubobject<UAbilitySystemComponent>
+		(TEXT("AbilitySystemComponent"));
+	m_AbilitySystemComponent->SetIsReplicated(true);
+}
 
 UAbilitySystemComponent* AMyPlayerState::GetAbilitySystemComponent() const
 {
