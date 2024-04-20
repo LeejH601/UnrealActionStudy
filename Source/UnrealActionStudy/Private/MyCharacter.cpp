@@ -18,7 +18,6 @@ AMyCharacter::AMyCharacter()
 
 	m_Attributes = CreateDefaultSubobject<UPlayerAttributeSet>("Attributes");
 
-
 }
 
 // Called when the game starts or when spawned
@@ -74,7 +73,7 @@ void AMyCharacter::OnRep_PlayerState()
  
 void AMyCharacter::InitializeAttributes()
 {
-	if (m_AbilitySystemComponent && m_DefaultAttributeEffect)
+	if (m_AbilitySystemComponent)
 	{
 		FGameplayEffectContextHandle EffectContext = m_AbilitySystemComponent->MakeEffectContext();
 		EffectContext.AddSourceObject(this);

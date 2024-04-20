@@ -1,0 +1,8 @@
+어빌리티 부여를 위한 작업들
+1. GamePlayAbility 생성 및 태그 설정
+2. 조건 만족 시 Try Activate Abilities by Tag 등을 실행 -  AbilitySystemComponent와 Gameplay Tag Container 필요
+3. GamePlay Tag Container는 접근 하기 쉬운 위치에 캐싱하는 것을 추천
+
+주의
+Granted Tag는 어빌리티 시스템 컴포넌트에도 태그를 부여함.
+그러나 게임플레이 이펙트의 Duration 이 Infinite나 Has Duration이 아니라면 ASC에 태그가 부여되지 않음

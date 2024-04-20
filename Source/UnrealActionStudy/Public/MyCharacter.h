@@ -5,6 +5,8 @@
 #include "AbilitySystemInterface.h"
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "GameplayTagContainer.h"
+#include <GameplayEffectTypes.h>
 #include "PlayerAttributeSet.h"
 #include "MyCharacter.generated.h"
 
@@ -36,7 +38,7 @@ public:
 	virtual void GiveDefaultAbilities();
 
 public:
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Abilities")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Abilities", meta = (AllowPrivateAccess = "ture"))
 		UAbilitySystemComponent* m_AbilitySystemComponent;
 
 	UPROPERTY()
