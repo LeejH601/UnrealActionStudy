@@ -37,6 +37,12 @@ public:
 	virtual void InitializeAttributes();
 	virtual void GiveDefaultAbilities();
 
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "EventCharacterAction")
+		void OnGrounded();
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "EventCharacterAction")
+		void OnDash(bool isDash);
+
 public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Abilities", meta = (AllowPrivateAccess = "ture"))
 		UAbilitySystemComponent* m_AbilitySystemComponent;
